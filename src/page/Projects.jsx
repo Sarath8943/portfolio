@@ -9,7 +9,8 @@ export const Projects = () => {
       short:
         "A full-featured food ordering web application with authentication, cart, and order management.",
       tech: "React, Tailwind.css, Express.js, Node.js, MongoDB",
-      video: "/videos.mp4",
+      video:
+        "https://res.cloudinary.com/dmw2439kf/video/upload/v1769356101/Untitled_design_advwd0.mp4",
       live: "https://food-eat-chi.vercel.app",
       repo: "https://github.com/Sarath8943/FoodEat",
     },
@@ -18,7 +19,7 @@ export const Projects = () => {
       title: "Temple Web App",
       short: "update soon",
       tech: "React, Tailwind.css, Express.js, Node.js, MongoDB",
-      video: "",
+      video: "", // No video yet
       live: "",
       repo: "",
     },
@@ -46,7 +47,6 @@ export const Projects = () => {
 
   return (
     <section className="w-full bg-[#0F172A] text-white">
-      {/* inner spacing only */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-4 sm:px-6 md:px-16 py-10">
         {/* LEFT */}
         <div className="order-2 md:order-1">
@@ -109,7 +109,7 @@ export const Projects = () => {
                   sm:h-[320px]
                   md:h-[420px]
                   lg:h-[520px]
-                  xl:h-[600px]
+                  xl:h-[330px]
                   object-contain
                 "
               />
