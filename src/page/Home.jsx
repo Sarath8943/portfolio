@@ -88,7 +88,7 @@ export const Home = () => {
           {/* VIEW CV BUTTON */}
           <div className="mt-8 flex justify-center md:justify-start">
             <a
-              href="/Sarath.pdf"
+              href="/sarath.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-blue-500 to-purple-600 px-6 sm:px-7 py-3 rounded-full shadow-lg hover:scale-105 transition"
