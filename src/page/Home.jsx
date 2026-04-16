@@ -35,11 +35,9 @@ export const Home = () => {
             <span className="text-blue-400">
               <TypeAnimation
                 sequence={[
-                  "FULL-STACK DEVELOPER",
+                  "FULL-STACK DEVELOPER(MERN STACK)",
                   2000,
                   "FRONTEND DEVELOPER",
-                  2000,
-                  "WEB DEVELOPER",
                   2000,
                   "REACT DEVELOPER",
                   2000,
