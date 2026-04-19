@@ -8,7 +8,7 @@ export const Projects = () => {
       title: "Food Ordering Web App",
       short:
         "A full-featured food ordering web application with authentication, cart, and order management.",
-      tech: "React, Tailwind.css, Express.js, Node.js, MongoDB",
+      tech: "React, Tailwind.css, Express.js, Node.js, MongoDB, Cloudinary",
       video:
         "https://res.cloudinary.com/dmw2439kf/video/upload/v1769356101/Untitled_design_advwd0.mp4",
       live: "https://food-eat-chi.vercel.app",
@@ -18,7 +18,7 @@ export const Projects = () => {
       id: 2,
       title: "Temple Web App",
       short: "update soon",
-      tech: "React, Tailwind.css, Express.js, Node.js, MongoDB",
+      tech: "React, Tailwind.css, Express.js, Node.js, MongoDB, Cloudinary",
       video: "", // No video yet
       live: "",
       repo: "",

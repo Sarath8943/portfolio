@@ -1,5 +1,12 @@
 import { useEffect } from "react";
-import { FaReact, FaNodeJs, FaDatabase, FaGitAlt } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaGitAlt,
+  FaBolt,
+  FaServer,
+} from "react-icons/fa";
 import {
   SiMongodb,
   SiTailwindcss,
@@ -9,6 +16,9 @@ import {
   SiCloudinary,
   SiVercel,
 } from "react-icons/si";
+import * as SiIcons from "react-icons/si";
+
+const RenderIcon = SiIcons.SiRender || FaServer;
 
 const skills = [
   { name: "React.js", icon: FaReact, color: "#38bdf8" },
@@ -21,6 +31,7 @@ const skills = [
   { name: "Databases", icon: FaDatabase, color: "#a855f7" },
   { name: "Git & GitHub", icon: FaGitAlt, color: "#f97316" },
   { name: "Cloudinary", icon: SiCloudinary, color: "#0ea5e9" },
+  { name: "Render", icon: RenderIcon, color: "#46e3b7" },
   { name: "Vercel", icon: SiVercel, color: "#e5e7eb" },
 ];
 
@@ -49,8 +60,9 @@ export const Skill = () => {
       
       {/* Heading */}
       <div className="pt-10 pb-6 text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-          ⚡ My Tech Stack
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold inline-flex items-center gap-2">
+          <FaBolt className="text-yellow-400" />
+          <span>My Tech Stack</span>
         </h2>
       </div>
 
