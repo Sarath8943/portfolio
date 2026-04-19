@@ -1,149 +1,123 @@
-import { useState, useEffect } from "react";
-import { Github, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Github, ExternalLink, Zap } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
   const projects = [
     {
       id: 1,
       title: "Food Ordering Web App",
-      short:
-        "A full-featured food ordering web application with authentication, cart, and order management.",
-      tech: "React, Tailwind.css, Express.js, Node.js, MongoDB, Cloudinary",
-      video:
-        "https://res.cloudinary.com/dmw2439kf/video/upload/v1769356101/Untitled_design_advwd0.mp4",
+      category: "Full Stack (MERN) • Food ordering",
+      short: "A premium food delivery engine featuring real-time state management and secure payment flows.",
+      tech: ["React, Tailwind.css, Express.js, Node.js, MongoDB, Cloudinary"],
+      video: "https://res.cloudinary.com/dmw2439kf/video/upload/v1769356101/Untitled_design_advwd0.mp4", 
       live: "https://food-eat-chi.vercel.app",
       repo: "https://github.com/Sarath8943/FoodEat",
     },
     {
       id: 2,
       title: "Temple Web App",
-      short: "update soon",
-      tech: "React, Tailwind.css, Express.js, Node.js, MongoDB, Cloudinary",
-      video: "", // No video yet
-      live: "",
-      repo: "",
+      category: "Full Stack (MERN) • Temple ",
+      short: "A scalable platform for cultural organizations to manage devotees, donations, and event logistics.",
+      tech: ["React, Tailwind.css, Express.js, Node.js, MongoDB, Cloudinary"],
+      video: "https://res.cloudinary.com/dmw2439kf/video/upload/v1776587785/temple-final.mp4_ssvfxn.mp4",
+      live: "https://pathaikkara-mana-bhagavathy-temple.vercel.app",
+      repo: "https://github.com/Sarath8943/pathaikkaramana",
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const current = projects[currentIndex];
-
-  const handlePrev = () => {
-    setCurrentIndex((p) => (p === 0 ? projects.length - 1 : p - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((p) => (p === projects.length - 1 ? 0 : p + 1));
-  };
-
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (e.key === "ArrowLeft") handlePrev();
-      if (e.key === "ArrowRight") handleNext();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, []);
-
   return (
-    <section className="w-full bg-[#0F172A] text-white">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-4 sm:px-6 md:px-16 py-10">
-        {/* LEFT */}
-        <div className="order-2 md:order-1">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-5">
-            Latest <span className="text-green-500">Project</span>
+    <section className="relative w-full bg-[#020617] py-32 px-6 overflow-hidden">
+      {/* BACKGROUND MESH - Green maatti Indigo/Blue aakki */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-500/10 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* HEADER */}
+        <div className="flex flex-col items-center mb-24 text-center">
+          <h2 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-6">
+            Latest <span className="text-white/20 italic">Projects</span>
           </h2>
-
-          <h3 className="text-xl sm:text-2xl font-semibold">
-            {current.title}
-          </h3>
-
-          <p className="text-gray-300 mt-4 text-sm sm:text-base leading-relaxed">
-            {current.short}
-          </p>
-
-          <p className="text-green-500 mt-5 text-sm sm:text-base">
-            {current.tech}
-          </p>
-
-          <div className="border-t border-gray-700 mt-6" />
-
-          <div className="flex gap-4 mt-6">
-            {current.live && (
-              <a
-                href={current.live}
-                target="_blank"
-                rel="noreferrer"
-                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-gray-800 hover:bg-green-500 transition"
-              >
-                <ArrowUpRight size={20} />
-              </a>
-            )}
-            {current.repo && (
-              <a
-                href={current.repo}
-                target="_blank"
-                rel="noreferrer"
-                className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-gray-800 hover:bg-green-500 transition"
-              >
-                <Github size={20} />
-              </a>
-            )}
-          </div>
+          {/* Green line maatti Blue gradient aakki */}
+          <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
         </div>
 
-        {/* RIGHT */}
-        <div className="relative order-1 md:order-2">
-          <div className="rounded-xl overflow-hidden border-4 border-blue-950 shadow-lg bg-black">
-            {current.video && (
-              <video
-                key={current.video}
-                src={current.video}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="
-                  w-full 
-                  h-[240px]
-                  sm:h-[320px]
-                  md:h-[420px]
-                  lg:h-[520px]
-                  xl:h-[330px]
-                  object-contain
-                "
-              />
-            )}
-          </div>
-
-          <div className="absolute bottom-4 right-4 flex gap-2 sm:gap-3">
-            <button
-              onClick={handlePrev}
-              className="w-10 h-10 sm:w-11 sm:h-11 bg-[#111827] hover:bg-green-500 rounded-md flex items-center justify-center"
+        {/* PROJECT LIST */}
+        <div className="grid grid-cols-1 gap-20">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center`}
             >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              onClick={handleNext}
-              className="w-10 h-10 sm:w-11 sm:h-11 bg-[#111827] hover:bg-green-500 rounded-md flex items-center justify-center"
-            >
-              <ChevronRight size={18} />
-            </button>
-          </div>
+              {/* VIDEO SECTION */}
+              <div className="relative w-full lg:w-3/5 group">
+                <div className="absolute -inset-1 bg-blue-500/20 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                <div className="relative aspect-video rounded-[2rem] overflow-hidden border border-white/10 bg-black">
+                  <video
+                    src={project.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-4 py-1.5 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-[10px] font-bold text-white uppercase tracking-widest">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+              </div>
 
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-            {projects.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`w-2.5 h-2.5 rounded-full transition ${
-                  currentIndex === idx
-                    ? "bg-green-500 scale-125"
-                    : "bg-gray-500"
-                }`}
-              />
-            ))}
-          </div>
+              {/* INFO SECTION */}
+              <div className="w-full lg:w-2/5 space-y-6">
+                <div className="flex items-center gap-3">
+                  {/* Icon color maatti Blue aakki */}
+                  <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400">
+                    <Zap size={20} />
+                  </div>
+                  <h3 className="text-4xl font-bold text-white tracking-tight">
+                    {project.title}
+                  </h3>
+                </div>
+
+                <p className="text-slate-400 text-lg leading-relaxed font-medium">
+                  {project.short}
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span key={t} className="text-xs font-mono text-blue-400/80 uppercase tracking-tighter">
+                      {t.replace(/ /g, '')}
+                    </span>
+                  ))}
+                </div>
+
+                {/* BUTTONS - Green ozhivakki Blue aakki */}
+                <div className="flex items-center gap-6 pt-6">
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    className="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all flex items-center gap-2 shadow-lg shadow-blue-500/20 active:scale-95"
+                  >
+                    View Live <ExternalLink size={18} />
+                  </a>
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    className="p-3 rounded-full bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 transition-all active:scale-95"
+                  >
+                    <Github size={24} />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
