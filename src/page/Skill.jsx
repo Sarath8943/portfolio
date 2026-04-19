@@ -6,6 +6,8 @@ import {
   SiTypescript,
   SiExpress,
   SiJavascript,
+  SiCloudinary,
+  SiVercel,
 } from "react-icons/si";
 
 const skills = [
@@ -18,6 +20,8 @@ const skills = [
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06b6d4" },
   { name: "Databases", icon: FaDatabase, color: "#a855f7" },
   { name: "Git & GitHub", icon: FaGitAlt, color: "#f97316" },
+  { name: "Cloudinary", icon: SiCloudinary, color: "#0ea5e9" },
+  { name: "Vercel", icon: SiVercel, color: "#e5e7eb" },
 ];
 
 export const Skill = () => {
@@ -36,19 +40,21 @@ export const Skill = () => {
 
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
+
     return () => window.removeEventListener("scroll", revealOnScroll);
   }, []);
 
   return (
     <section className="w-full bg-[#0f172a] text-white">
-     
+      
+      {/* Heading */}
       <div className="pt-10 pb-6 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
           ⚡ My Tech Stack
         </h2>
       </div>
 
-   
+      {/* Skills Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 
                       gap-6 sm:gap-8 max-w-5xl mx-auto px-4 pb-10">
         {skills.map((skill) => {
@@ -75,6 +81,7 @@ export const Skill = () => {
         })}
       </div>
 
+      {/* Animations */}
       <style>
         {`
           .skill-card.show {
