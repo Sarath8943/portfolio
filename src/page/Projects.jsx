@@ -7,9 +7,11 @@ export const Projects = () => {
       id: 1,
       title: "Food Ordering Web App",
       category: "Full Stack (MERN) • Food ordering",
-      short: "A premium food delivery engine featuring real-time state management and secure payment flows.",
+      short:
+        "This is a food ordering web application that allows users to easily browse the menu, add items to cart, and place orders quickly. The application is designed to provide a smooth user experience across all devices..",
       tech: ["React, Tailwind.css, Express.js, Node.js, MongoDB, Cloudinary"],
-      video: "https://res.cloudinary.com/dmw2439kf/video/upload/v1769356101/Untitled_design_advwd0.mp4", 
+      video:
+        "https://res.cloudinary.com/dmw2439kf/video/upload/v1769356101/Untitled_design_advwd0.mp4",
       live: "https://food-eat-chi.vercel.app",
       repo: "https://github.com/Sarath8943/FoodEat",
     },
@@ -17,16 +19,18 @@ export const Projects = () => {
       id: 2,
       title: "Temple Web App",
       category: "Full Stack (MERN) • Temple ",
-      short: "A scalable platform for cultural organizations to manage devotees, donations, and event logistics.",
+      short:
+        "This is a modern, responsive website designed to make information about the temple easy to access. It features a clean and user-friendly interface that helps users clearly understand temple history, pooja details, events, and timings. It is designed to work smoothly on all devices,",
       tech: ["React, Tailwind.css, Express.js, Node.js, MongoDB, Cloudinary"],
-      video: "https://res.cloudinary.com/dmw2439kf/video/upload/v1776587785/temple-final.mp4_ssvfxn.mp4",
+      video:
+        "https://res.cloudinary.com/dmw2439kf/video/upload/v1776587785/temple-final.mp4_ssvfxn.mp4",
       live: "https://pathaikkara-mana-bhagavathy-temple.vercel.app",
       repo: "https://github.com/Sarath8943/pathaikkaramana",
     },
   ];
 
   return (
-    <section className="relative w-full bg-[#020617] py-32 px-6 overflow-hidden">
+    <section className="relative w-full bg-[#0f172a] py-32 px-6 overflow-hidden">
       {/* BACKGROUND MESH - Green maatti Indigo/Blue aakki */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] animate-pulse" />
@@ -36,7 +40,7 @@ export const Projects = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* HEADER */}
         <div className="flex flex-col items-center mb-24 text-center">
-          <h2 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-6">
+          <h2 className="text-6xl md:text-4xl font-black text-white tracking-tighter mb-6">
             Latest <span className="text-white/20 italic">Projects</span>
           </h2>
           {/* Green line maatti Blue gradient aakki */}
@@ -89,11 +93,14 @@ export const Projects = () => {
                 <p className="text-slate-400 text-lg leading-relaxed font-medium">
                   {project.short}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((t) => (
-                    <span key={t} className="text-xs font-mono text-blue-400/80 uppercase tracking-tighter">
-                      {t.replace(/ /g, '')}
+                    <span
+                      key={t}
+                      className="text-xs font-mono text-blue-400/80 uppercase tracking-tighter"
+                    >
+                      {t.replace(/ /g, "")}
                     </span>
                   ))}
                 </div>
