@@ -25,14 +25,14 @@ export const Contact = () => {
       )
       .then(
         () => {
-          toast.success("✅ Message Sent Successfully!", {
+          toast.success("Message sent successfully!", {
             position: "top-right",
             autoClose: 3000,
           });
           form.current.reset();
         },
         () => {
-          toast.error("❌ Something went wrong. Try again.", {
+          toast.error("Something went wrong. Try again.", {
             position: "top-right",
             autoClose: 3000,
           });
@@ -41,53 +41,48 @@ export const Contact = () => {
   };
 
   return (
-    <section
-      className="bg-[#0f172a] text-white py-16 px-4 sm:px-6 lg:px-12"
-      id="contact"
-    >
+    <section className="bg-[#0f172a] text-white py-14 sm:py-16 px-4 sm:px-6 lg:px-12">
       <ToastContainer />
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-        
-      
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 sm:gap-12">
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
             Connect with Me
           </h2>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 w-full max-w-xs md:max-w-none">
             <a
               href="https://www.linkedin.com/in/sarath-c12"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-base sm:text-lg hover:text-blue-400 transition"
+              className="flex items-center justify-center md:justify-start gap-3 text-base sm:text-lg hover:text-blue-400 transition"
             >
-              <FaLinkedin className="text-2xl" /> LinkedIn
+              <FaLinkedin className="text-2xl shrink-0" /> LinkedIn
             </a>
 
             <a
               href="https://github.com/Sarath8943"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-base sm:text-lg hover:text-blue-400 transition"
+              className="flex items-center justify-center md:justify-start gap-3 text-base sm:text-lg hover:text-blue-400 transition"
             >
-              <FaGithub className="text-2xl" /> GitHub
+              <FaGithub className="text-2xl shrink-0" /> GitHub
             </a>
 
             <a
               href="mailto:sarathshivan99@gmail.com"
-              className="flex items-center gap-3 text-base sm:text-lg hover:text-blue-400 transition"
+              className="flex items-center justify-center md:justify-start gap-3 text-base sm:text-lg hover:text-blue-400 transition break-all"
             >
-              <FaEnvelope className="text-2xl" /> Email
+              <FaEnvelope className="text-2xl shrink-0" /> Email
             </a>
 
             <a
               href="https://wa.me/918943926520"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 text-base sm:text-lg hover:text-green-400 transition"
+              className="flex items-center justify-center md:justify-start gap-3 text-base sm:text-lg hover:text-green-400 transition"
             >
-              <FaWhatsapp className="text-2xl" /> WhatsApp
+              <FaWhatsapp className="text-2xl shrink-0" /> WhatsApp
             </a>
           </div>
         </div>
@@ -98,7 +93,7 @@ export const Contact = () => {
           </h2>
 
           <form ref={form} onSubmit={sendEmail} className="space-y-5">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4">
               <input
                 type="text"
                 name="user_name"
@@ -121,7 +116,7 @@ export const Contact = () => {
               placeholder="Message"
               required
               className="w-full px-4 py-3 text-sm sm:text-base rounded-md bg-[#1e293b] outline-none focus:ring-2 focus:ring-blue-500"
-            ></textarea>
+            />
 
             <button
               type="submit"

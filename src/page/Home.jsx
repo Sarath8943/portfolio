@@ -4,38 +4,39 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import sarath from "../assets/sarath.jpg";
 
+const MotionDiv = motion.div;
+
 export const Home = () => {
   return (
     <section
-      id="home"
-      className="relative min-h-screen bg-[#0f172a] text-white overflow-hidden"
+      className="relative min-h-svh bg-[#0f172a] text-white overflow-hidden"
     >
       {/* Background effects */}
-      <div className="absolute -top-24 -left-24 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 -right-24 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute -top-24 -left-24 w-56 h-56 sm:w-80 sm:h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
+      <div className="absolute bottom-0 -right-24 w-56 h-56 sm:w-80 sm:h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-24 flex flex-col-reverse md:flex-row items-center gap-14">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-24 pb-16 sm:pt-28 lg:pt-32 flex min-h-svh flex-col-reverse md:flex-row items-center justify-center gap-10 lg:gap-14">
         {/* LEFT CONTENT */}
-        <motion.div
+        <MotionDiv
           className="w-full md:w-1/2 space-y-4 text-center md:text-left"
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-gray-400">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl text-gray-400">
             Hai,
           </h2>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-300">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-gray-300 leading-tight">
             I'm SARATH
           </h1>
 
-          <h3 className="text-lg sm:text-xl lg:text-2xl font-medium flex flex-wrap gap-2 justify-center md:justify-start">
-            And I'm a{" "}
-            <span className="text-blue-400">
+          <h3 className="text-base sm:text-xl lg:text-2xl font-medium flex flex-wrap gap-2 justify-center md:justify-start leading-snug">
+            <span>And I'm a</span>
+            <span className="text-blue-400 max-w-full break-words">
               <TypeAnimation
                 sequence={[
-                  "FULL-STACK DEVELOPER(MERN STACK)",
+                  "FULL-STACK DEVELOPER (MERN STACK)",
                   2000,
                   "FRONTEND DEVELOPER",
                   2000,
@@ -94,10 +95,10 @@ export const Home = () => {
               View CV
             </a>
           </div>
-        </motion.div>
+        </MotionDiv>
 
         {/* RIGHT IMAGE */}
-        <motion.div
+        <MotionDiv
           className="w-full md:w-1/2 flex justify-center"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -108,10 +109,10 @@ export const Home = () => {
             <img
               src={sarath}
               alt="Sarath"
-              className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-blue-400"
+              className="relative w-44 h-44 min-[380px]:w-56 min-[380px]:h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full object-cover border-4 border-blue-400"
             />
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

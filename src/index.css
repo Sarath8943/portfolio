@@ -5,3 +5,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background: #0f172a;
+}
+
+#root {
+  min-height: 100vh;
+}

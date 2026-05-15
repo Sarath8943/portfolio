@@ -4,15 +4,15 @@ import sarath from "../assets/sarath.jpg";
 export const About = () => {
   return (
     <section className="w-full bg-[#0f172a]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-12">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-16">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
       
           <div className="flex justify-center">
             <div className="relative">
               <img
                 src={sarath}
                 alt="Profile"
-                className="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 object-cover rounded-full"
+                className="w-44 h-44 min-[380px]:w-52 min-[380px]:h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 object-cover rounded-full"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-600 to-red-600 blur-2xl opacity-70 -z-10"></div>
             </div>

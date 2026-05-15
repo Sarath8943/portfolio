@@ -56,31 +56,31 @@ export const Skill = () => {
   }, []);
 
   return (
-    <section className="w-full bg-[#0f172a] text-white">
+    <section className="w-full bg-[#0f172a] text-white px-4 sm:px-6 lg:px-12">
       
       {/* Heading */}
-      <div className="pt-10 pb-6 text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold inline-flex items-center gap-2">
+      <div className="pt-12 sm:pt-16 pb-6 text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold inline-flex flex-wrap justify-center items-center gap-2">
           <FaBolt className="text-yellow-400" />
           <span>My Tech Stack</span>
         </h2>
       </div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 
-                      gap-6 sm:gap-8 max-w-5xl mx-auto px-4 pb-10">
+      <div className="grid grid-cols-2 min-[480px]:grid-cols-3 md:grid-cols-4 lg:grid-cols-6
+                      gap-3 sm:gap-5 max-w-6xl mx-auto pb-12 sm:pb-16">
         {skills.map((skill) => {
           const Icon = skill.icon;
           return (
             <div
               key={skill.name}
               className="skill-card opacity-0 translate-y-8 flex flex-col items-center justify-center 
-                         p-4 sm:p-6 bg-[#1a2238] rounded-xl border border-gray-700
+                         min-h-28 sm:min-h-32 p-4 sm:p-5 bg-[#1a2238] rounded-xl border border-gray-700
                          shadow-md hover:shadow-yellow-400/30 hover:scale-110 hover:border-yellow-400
                          transition-all duration-500 ease-out"
             >
               <div
-                className="skill-icon text-4xl sm:text-5xl mb-3 transition-transform duration-700"
+                className="skill-icon text-3xl sm:text-5xl mb-3 transition-transform duration-700"
                 style={{ color: skill.color }}
               >
                 <Icon />
